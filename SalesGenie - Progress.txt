@@ -1,0 +1,18 @@
+SalesGenie AI progress — 18 Oct 2026
+
+Milestone 1 status: Core implementation is complete, but the milestone is NOT fully accepted or signed off yet.
+
+Implemented in this workspace:
+- FastAPI lead create/list/search/get/update/status endpoints with shared validation/error responses.
+- CSV import with duplicate and invalid row reporting, atomic all-or-nothing behavior, input limits, and ImportBatch persistence.
+- OpenAI-configured company analysis, lead-linked saved insights, latest-analysis retrieval, and transparent estimated qualification score.
+- Streamlit Leads, Add Lead, and CSV Import screens.
+- Root application requirements, local-safe environment example, synthetic CSV dataset, and updated setup/API/backlog docs.
+- SQLite: 13 tests passed and one PostgreSQL-only test skipped. PostgreSQL 16: migrations/drift checks and 14 API/database tests passed. The deterministic synthetic API flow completed 20/20 records; this does not establish real-model insight accuracy or satisfy the sheet's >=95% accuracy acceptance target. See MILESTONE_1_TEST_REPORT.md.
+- Live API/OpenAPI and Streamlit health verified; browser smoke validated the seeded Leads list, manual lead creation, and CSV duplicate reporting.
+
+Selected baseline: Python/FastAPI/Streamlit/SQLAlchemy/Alembic; SQLite local development and PostgreSQL production; OpenAI with `gpt-4o-mini` selected. The requester reports team approval of lifecycle statuses, duplicate rule, CSV policy, and heuristic score. A live OpenAI request was attempted with the local key but returned HTTP 429; no analysis was saved.
+
+Remaining before claiming full Milestone 1 acceptance: resolve the OpenAI usage/rate limit and complete a successful live analysis/retrieval; agree and execute the sheet's >=95% manageable-record/insight-accuracy evaluation against an agreed test set and review rubric; demonstrate saved live analysis in the UI; clean-machine setup validation; demo rehearsal; defect disposition; formal SRS/API review and team signatures.
+
+Repository note: https://github.com/230701224/sales-genie-ai.git was checked and contains only a one-line README. This workspace is not a Git checkout. Reconcile/import this implementation only after the correct checkout path and branch workflow are supplied and reviewed.
